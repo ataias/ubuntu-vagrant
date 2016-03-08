@@ -7,3 +7,4 @@ using Blosc
 Pkg.add("HDF5")
 Pkg.build("HDF5")
 using HDF5
+Pkg.add("ArgParse")
