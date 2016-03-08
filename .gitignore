@@ -1,2 +1,4 @@
 .vagrant/
 ferrofluidos/
+.DS_Store
+png/
