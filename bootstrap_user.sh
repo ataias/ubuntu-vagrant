@@ -6,11 +6,18 @@ cp -f /vagrant/juliarc.jl /home/vagrant/.juliarc.jl
 julia /vagrant/bootstrap_julia.jl
 
 #Download ferrofluidos repository
-export DIRECTORY=/home/vagrant/ferrofluidos
+export DIRECTORY=/vagrant/ferrofluidos
 if [ -d $DIRECTORY ]; then
   cd $DIRECTORY
   git pull
   cd -
 else
+  cd /vagrant/
   git clone https://github.com/ataias/ferrofluidos.git
+  cd -
+fi
+
+#Symbolic link to folder of project
+if [ ! -d /home/vagrant/ferrofluidos ]; then
+  ln -s /vagrant/ferrofluidos /home/vagrant/ferrofluidos
 fi

@@ -1,3 +1,4 @@
+Pkg.update()
 Pkg.add("BinDeps")
 Pkg.build("BinDeps")
 using BinDeps
