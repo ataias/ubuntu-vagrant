@@ -4,3 +4,13 @@ cp -f /vagrant/zshrc /home/vagrant/.zshrc
 cp -f /vagrant/juliarc.jl /home/vagrant/.juliarc.jl
 
 julia /vagrant/bootstrap_julia.jl
+
+#Download ferrofluidos repository
+export DIRECTORY=/home/vagrant/ferrofluidos
+if [ -d $DIRECTORY ]; then
+  cd $DIRECTORY
+  git pull
+  cd -
+else
+  git clone https://github.com/ataias/ferrofluidos.git
+fi
